@@ -4,7 +4,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProfileService {
-    public void processProfile(Profile profile){
+    public Profile processProfile(Profile profile){
         System.out.println("Received Profile through service : "+profile.toString());
+        profile.setName(profile.getName().concat( " name updated"));
+        return profile;
     }
 }
