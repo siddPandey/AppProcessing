@@ -22,6 +22,6 @@ public class Controller {
 
     @PostMapping("/api/setProfile")
     public void receiveData(@RequestBody Profile profile){
-//        profileService.processProfile(profile);
+        profileService.processProfile(profile);
     }
 }
