@@ -16,8 +16,11 @@ public class Controller {
     }
 
     @GetMapping("/api/app/{resourceId}")
-    public String getSingleApp(@PathVariable String resourceId){
-        return "SB response with resource id :"+resourceId;
+    public Profile getSingleApp(@PathVariable String resourceId){
+        Profile profile = new Profile();
+        profile.setName("Gubbu");
+        profile.setAddress("NY");
+        return profileService.processProfile(profile);
     }
 
     @PostMapping("/api/setProfile")
