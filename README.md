@@ -1,4 +1,28 @@
 Springboot 341 and Java 17
-intellij idea community addition  springboot - https://youtu.be/ruJRCPsddxM?si=41cXYCQTWzCEYXLR -
-Actuator - https://youtu.be/sATuxP_qC-4?si=sEq2d5rG3NAEz5ni
-Dockerization - https://youtu.be/05ADPwAmiAs?si=dQbJqAdC_H0ctXHN
+intellij idea community addition 
+- springboot - https://youtu.be/ruJRCPsddxM?si=41cXYCQTWzCEYXLR 
+- Actuator - https://youtu.be/sATuxP_qC-4?si=sEq2d5rG3NAEz5ni
+- Dockerization - https://youtu.be/05ADPwAmiAs?si=dQbJqAdC_H0ctXHN
+- Docker commands
+  - // build image. ame should be in lowercasse
+    - docker build -t appprocessing .
+  -// list images
+    - docker images
+  -// delete images
+    - docker rmi d306a27b6c2d
+  -// add tag to image 
+    - docker build -t appprocessing:0.1.RELEASE .
+  -// run image in container. both host and container are running on 8080 ports
+    - docker run -p 8080:8080 appprocessing 
+  -// run image in container. both host machine port is 8081 and container port is 8080 
+    - docker run -p 8081:8080 appprocessing
+  -// dicplay running docker containers
+    - docker ps
+  -// run container in detached mode 
+    - docker run -p 8080:8080 -d appprocessing
+  -// check log
+    - docker logs -f <image name, first 4 chars at least,  from 'docker ps' command>
+      - or
+    - docker logs -f docker id <reterned , first 4 chars atleast in detached mode command>
+  -// stop docker container
+    - docker stop <container id , from docker ps command>
