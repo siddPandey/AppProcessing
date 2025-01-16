@@ -26,3 +26,28 @@ intellij idea community addition
     - docker logs -f docker id <reterned , first 4 chars atleast in detached mode command>
   -// stop docker container
     - docker stop <container id , from docker ps command>
+
+    - Docker login  - login to docker hub to push image
+    -docker tag appprocessing pdsiddharth<account name>/appprocessing:0.1.RELEASE
+    - docker push pdsiddharth/appprocessing:0.1.RELEASE
+  - // Pull doker image
+    - docker pull mysql:latest  
+    - // run mysql in container, localhost is container name
+    - docker run -p 3307:3306 --name localhost -e MYSQL_ROOT_PASSWORD=Mysql@123 -e MYSQL_DATABASE=employee_db -e MYSQL_USER=sidp -e MYSQL_PASSWORD=sidp -d mysql:latest
+    - // connect to mysql in container
+    - docker exec -it localhost bash
+    - mysql -u root -p
+    - enter password that was used to run mysql image , i.e. Mysql@123
+    - show databases;
+    - exit -  from mysql
+    - exit - from container
+  - //copy from local to container name 'localhost'
+    - docker cp test.txt localhost:/tmp/test.txt
+  - //copy from container name 'localhost' to local
+      - docker cp localhost:/tmp/test.txt test1.txt
+  - docker exec -i localhost mysql -uroot -pMysql@123 < /tmp/person.sql-- not working
+  -  copy file to mysql containr
+  - login to container
+    - connect to my sql
+    - use database;
+    - source <filename> enter. 
